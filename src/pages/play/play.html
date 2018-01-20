@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>DoTheMath</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div id="score">Score: {{score}}</div>
+
+  <div id="resultNumber" *ngIf="!resultMessage">{{resultNumber}}</div>
+  <div id="resultMessage" *ngIf="resultMessage">{{resultMessage}}</div>
+  <div id="ecuation">{{firstNumber}} {{operator}} {{secondNumber}}</div>
+
+  <div id="validationButtons">
+    <button id="wrongBtn" ion-button large color="danger" (tap)="checkEcuation('wrong')">Wrong!</button>
+    <button id="correctBtn" ion-button large color="secondary" (tap)="checkEcuation('correct')">Correct!</button>
+  </div>
+
+
+</ion-content>

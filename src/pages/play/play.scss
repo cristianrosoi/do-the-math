@@ -1,0 +1,43 @@
+page-play {
+
+  .content {
+    background: color($colors, primary);
+  }
+
+  #resultNumber,
+  #resultMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    font-size: 7em;
+    color: color($colors, light);
+    font-weight: bold;
+  }
+
+  #ecuation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+    color: color($colors, primary);
+    background-color: lightyellow;
+    margin: 0 20px;
+    padding: 10px 20px;
+    font-weight: bold;
+  }
+
+  #validationButtons {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 70px;
+  }
+
+  #score {
+    color: color($colors, light);
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+}
