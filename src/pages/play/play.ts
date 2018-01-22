@@ -22,6 +22,8 @@ export class PlayPage {
     console.log('ionViewDidLoad PlayPage');
     this.setValues();
     this.score = 0;
+    this.level = 1;
+    this.lives = 3;
   }
 
   firstNumber: number;
@@ -30,7 +32,11 @@ export class PlayPage {
   operator: string;
   resultMessage: string;
 
+  win: boolean = false;
+
   score: number;
+  level: number;
+  lives: number;
 
   getRandomNumber(): number {
     return Math.round(Math.random() * 10);
@@ -53,7 +59,7 @@ export class PlayPage {
             this.score++;
           } else {
             this.resultMessage = "Wrong!";
-            this.score--;
+            this.score > 0 ? this.score-- : this.lives--;
           }
         }
 
@@ -63,14 +69,20 @@ export class PlayPage {
             this.score++;
           } else {
             this.resultMessage = "Wrong!";
-            this.score--;
+            this.score > 0 ? this.score-- : this.lives--;
           }
         }
     }
 
    if(!this.checkScore()) {
-    setTimeout( () => { this.setValues(); }, 1000);
+    if(this.lives <= 0) {
+      this.win = false;
+      this.resultMessage = "Game Over!";
+    } else {
+      setTimeout( () => { this.setValues(); }, 1000);
+    }
    } else {
+     this.win = true;
      this.resultMessage = "You Won!";
    }
   }

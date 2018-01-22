@@ -9,15 +9,19 @@
 
 <ion-content padding>
 
-  <div id="score">Score: {{score}}</div>
+  <div id="statusBar">
+    <span id="score">Score: {{score}}</span>
+    <span id="level">Level: {{level}}</span>
+    <span id="lives">Lives: {{lives}}</span>
+  </div>
 
   <div id="resultNumber" *ngIf="!resultMessage">{{resultNumber}}</div>
   <div id="resultMessage" *ngIf="resultMessage">{{resultMessage}}</div>
   <div id="ecuation">{{firstNumber}} {{operator}} {{secondNumber}}</div>
 
   <div id="validationButtons">
-    <button id="wrongBtn" ion-button large color="danger" (tap)="checkEcuation('wrong')">Wrong!</button>
-    <button id="correctBtn" ion-button large color="secondary" (tap)="checkEcuation('correct')">Correct!</button>
+    <button id="wrongBtn" ion-button full large color="midnight" (tap)="checkEcuation('wrong')">Wrong!</button>
+    <button id="correctBtn" ion-button full large color="midnight" (tap)="checkEcuation('correct')">Correct!</button>
   </div>
 
 

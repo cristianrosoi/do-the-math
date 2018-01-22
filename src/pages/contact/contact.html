@@ -8,10 +8,22 @@
 
 <ion-content>
   <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
+    <ion-list-header>You can reach me at:</ion-list-header>
     <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+      <ion-icon name="logo-facebook"></ion-icon>
+      <a href="http://www.{{facebookProfile}}">{{facebookProfile}}</a>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="logo-linkedin"></ion-icon>
+      <a href="http://www.{{linkedinProfile}}">{{linkedinProfile}}</a>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="logo-github"></ion-icon>
+      <a href="http://www.{{githubProfile}}">{{githubProfile}}</a>
+    </ion-item>
+    <ion-item>
+      <ion-icon name="mail"></ion-icon>
+      <a href="mailto:{{email}}">{{email}}</a>
     </ion-item>
   </ion-list>
 </ion-content>

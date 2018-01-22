@@ -11,4 +11,9 @@ export class ContactPage {
 
   }
 
+  facebookProfile: string = "facebook.com/cristian.rosoi";
+  linkedinProfile: string = "linkedin.com/in/cristianrosoi";
+  githubProfile: string = "github.com/cristianrosoi";
+  email: string = "cristian.rosoi@gmail.com";
+
 }
