@@ -33,6 +33,7 @@ export class PlayPage {
   resultMessage: string;
 
   win: boolean = false;
+  gameOver: boolean = false;
 
   score: number;
   level: number;
@@ -59,7 +60,8 @@ export class PlayPage {
             this.score++;
           } else {
             this.resultMessage = "Wrong!";
-            this.score > 0 ? this.score-- : this.lives--;
+            this.score > 0 ? this.score-- : null;
+            this.lives > 0 ? this.lives-- : null;
           }
         }
 
@@ -69,7 +71,8 @@ export class PlayPage {
             this.score++;
           } else {
             this.resultMessage = "Wrong!";
-            this.score > 0 ? this.score-- : this.lives--;
+            this.score > 0 ? this.score-- : null;
+            this.lives > 0 ? this.lives-- : null;
           }
         }
     }
@@ -77,18 +80,28 @@ export class PlayPage {
    if(!this.checkScore()) {
     if(this.lives <= 0) {
       this.win = false;
+      this.gameOver = true;
       this.resultMessage = "Game Over!";
     } else {
       setTimeout( () => { this.setValues(); }, 1000);
     }
    } else {
      this.win = true;
+     this.gameOver = false;
      this.resultMessage = "You Won!";
    }
   }
 
   checkScore(): boolean {
     return this.score > 9;
+  }
+
+  checkWinOrLoose(): boolean {
+    if(this.win || this.gameOver) {
+      return false;
+    } else {
+      return true;
+    }
   }
 
 }
